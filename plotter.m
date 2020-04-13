@@ -20,10 +20,16 @@ end
 x( ~any(x,2), : ) = [];
 % j = ones(600,1);
 
+h = binscatter(x(:,1),x(:,3),[size(intens_mat,2),250])
 ax = gca;
 ax.ColorScale = 'log';
-h = binscatter(x(:,1),x(:,3),[size(intens_mat,2),250])
+ax.FontName = 'Arial';
+ax.FontSize = 20;
 axis([1 size(intens_mat,2) min(x(:,3)) max(x(:,3))])
+xlabel('Number of magnetic fields') 
+ylabel('Frequency / MHz') 
+colorbar('off')
+% colorbar('Ticks',[])
 
 end
 
